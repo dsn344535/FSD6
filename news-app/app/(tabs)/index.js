@@ -6,7 +6,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Linking
+  Linking,
+  Alert
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import NewsCard from "../../components/NewsCard";
@@ -38,7 +39,7 @@ export default function HomeScreen() {
     setFilteredNews(filtered);
   };
 
-  const openArticle = async (url: string) => {
+  const openArticle = async (url) => {
   const supported = await Linking.canOpenURL(url);
 
   if (supported) {
